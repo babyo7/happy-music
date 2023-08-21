@@ -15,7 +15,7 @@
     <div class="box" style="visibility: hidden;" id="box">
         <nav>
             <div class="outer">
-        <div class="circle">       
+        <div class="circle shine" id="profile">       
         </div>
         </div>
         <div class="heading">
@@ -28,7 +28,7 @@
 
      </nav>
 
-     <div class="music" id="mus" style="visibility: hidden;" >
+     <div class="music shine" id="mus" style="visibility: hidden;" >
         <div id="playlist" class="p"  style="visibility: hidden;">
             <button id="laddi">Rubicon Drill - Laddi Chahal</button>
             <button id="week">Reminder - The Weeknd</button>
@@ -72,6 +72,15 @@
    
    <script>
         
+        window.onload = () => kill();
+
+
+        function kill(){
+            document.getElementById("mus").classList.remove("shine");
+            document.getElementById("profile").classList.remove("shine");
+            
+
+        }
 
       
         var cnt = 0;
