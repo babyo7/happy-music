@@ -54,6 +54,7 @@ body::-webkit-scrollbar{
     filter: grayscale(100%);
     filter: brightness(0%);
 }
+
 .control{
 
     margin-top: 0px;

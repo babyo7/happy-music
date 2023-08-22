@@ -1,156 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div id="loading">
-        <img id="gta"  src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXU4dTg0cmMxZndzMTZ1M25wNDk4Y2lqanBkZGQzNmpsaG0xdHg2ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1z/XaejLonqk19jDugJbq/200.gif" />
-     
+        <img id="gta"
+            src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXU4dTg0cmMxZndzMTZ1M25wNDk4Y2lqanBkZGQzNmpsaG0xdHg2ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1z/XaejLonqk19jDugJbq/200.gif" />
+
     </div>
     <div class="box" style="visibility: hidden;" id="box">
         <nav>
             <div class="outer">
-        <div class="circle shine" id="profile">       
+                <div class="circle shine" id="profile">
+                </div>
+            </div>
+            <div class="heading">
+                <h1 id="Baby">Ridezzz</h1>
+            </div>
+            <div class="right-outer">
+                <div class="right-circle" id="shareBtn">
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="music shine" id="mus" style="visibility: hidden;">
+            <div id="playlist" class="p" style="visibility: hidden;">
+                <button id="laddi">Rubicon Drill - Laddi Chahal</button>
+                <button id="week">Reminder - The Weeknd</button>
+                <button id="daku">Daku - chani Nattan</button>
+                <button id="yadav">Yadav Brand 2 - Sunny Yaduvanshi</button>
+                <button id="life">Living Life,In The Night - Cherlimoya</button>
+                <button id="hips">Hips Don't Lie - Shakira</button>
+                <button id="still">Still Rollin -Shubh</button>
+                <button id="don">Danza Kuduron Don - Don Omar</button>
+                <button id="red">Gaddi Red Challenger - Babbulicious</button>
+                <button id="riar">Obsessed - Riar Saab</button>
+                <button id="peg">Chhote Chhote Peg - Neha Kakkar</button>
+                <button id="khan">Haryana Hood - Irshad Khan</button>
+                <button id="space" style="visibility: hidden; height: 17px;">Haryana Hood - Irshad Khan</button>
+
+
+
+
+            </div>
+
         </div>
+        <div id="hide">
+            <h2 id="name">Rubicon Drill</h2>
+            <p id="artist">Laddi Chahal</p>
         </div>
-        <div class="heading">
-     <h1 id="Baby">Ridezzz</h1>
-     </div>
-     <div class="right-outer">
-        <div class="right-circle" id="shareBtn">       
-        </div>
+        <input id="progress" type="range" value="0">
+        <audio id="myAudio">
+            <source src="Music/Music.mp3" type="audio/mp3">
+        </audio>
+        <div class="control" style="visibility: hidden;" id="control">
+            <button id="btn1" style="font-size: 10px;" class="fa-solid fa-angle-left" onclick="prv()"></button>
+
+            <button id="btn2" onclick="playAudio()" class="fa-solid fa-play"></button>
+
+            <button id="btn3" style="font-size: 10px;" class="fa-solid fa-angle-right" onclick="tests()"></button>
+
         </div>
 
-     </nav>
-
-     <div class="music shine" id="mus" style="visibility: hidden;" >
-        <div id="playlist" class="p"  style="visibility: hidden;">
-            <button id="laddi">Rubicon Drill - Laddi Chahal</button>
-            <button id="week">Reminder - The Weeknd</button>
-            <button id="daku">Daku - chani Nattan</button>
-            <button id="yadav">Yadav Brand 2 - Sunny Yaduvanshi</button>
-            <button id="life">Living Life,In The Night - Cherlimoya</button>
-            <button id="hips">Hips Don't Lie - Shakira</button>
-            <button id="still">Still Rollin -Shubh</button>
-            <button id="don">Danza Kuduron Don - Don Omar</button>
-            <button id="red">Gaddi Red Challenger - Babbulicious</button>
-            <button id="riar">Obsessed - Riar Saab</button>
-            <button id="peg">Chhote Chhote Peg - Neha Kakkar</button>
-            <button id="khan">Haryana Hood - Irshad Khan</button>
-            <button id="space" style="visibility: hidden; height: 17px;">Haryana Hood - Irshad Khan</button>
-           
-            
-            
-   
-        </div>
-   
-     </div>
-     <div id="hide">
-     <h2 id="name">Rubicon Drill</h2>
-     <p id="artist">Laddi Chahal</p>
-     </div>
-     <input id="progress" type="range" value="0">  
-    <audio  id="myAudio">
-    <source src="Music/Music.mp3" type="audio/mp3">
-  </audio>
-     <div class="control" style="visibility: hidden;" id="control">
-     <button id="btn1"  style="font-size: 10px;" class="fa-solid fa-angle-left" onclick="prv()"></button>
-    
-     <button id="btn2"  onclick="playAudio()" class="fa-solid fa-play"></button>
-    
-     <button id="btn3"  style="font-size: 10px;" class="fa-solid fa-angle-right" onclick="next()"></button>
-    
     </div>
 
-    </div>
-   
-   
-   <script>
-        
+
+    <script>
+
         window.onload = () => kill();
-        
 
 
-        function kill(){
+
+        function kill() {
             document.getElementById("mus").classList.remove("shine");
             document.getElementById("profile").classList.remove("shine");
-            
+
 
         }
 
-      
+
         var cnt = 0;
         var nxt = 0;
 
         var prev = 0;
-        
 
-        var t =  document.getElementById("test");
-       
-        var x = document.getElementById("myAudio"); 
+
+        var t = document.getElementById("test");
+
+        var x = document.getElementById("myAudio");
         var y = document.getElementById("btn2");
-        var z =  document.getElementById("progress");
-        var m =  document.getElementById("mus");
+        var z = document.getElementById("progress");
+        var m = document.getElementById("mus");
         var ns = document.getElementById("btn3");
 
-        var n =  document.getElementById("name");
-        var a =  document.getElementById("artist");
-        var p=  document.getElementById("playlist");
-       
-       
-        var hide=  document.getElementById("hide");
+        var n = document.getElementById("name");
+        var a = document.getElementById("artist");
+        var p = document.getElementById("playlist");
 
-      mus.onload = () => kill();
 
-        var laddi=  document.getElementById("laddi");
-        var week=  document.getElementById("week");
-        var daku=  document.getElementById("daku");
-        var yadav=  document.getElementById("yadav");
-        var life=  document.getElementById("life");
-        var hips=  document.getElementById("hips");
-        var still=  document.getElementById("still");
-        var don=  document.getElementById("don");
-        var red=  document.getElementById("red");
-        var riar=  document.getElementById("riar");
-        var peg=  document.getElementById("peg");
-        var khan=  document.getElementById("khan");
+        var hide = document.getElementById("hide");
 
-       
-        
+        mus.onload = () => kill();
+
+        var laddi = document.getElementById("laddi");
+        var week = document.getElementById("week");
+        var daku = document.getElementById("daku");
+        var yadav = document.getElementById("yadav");
+        var life = document.getElementById("life");
+        var hips = document.getElementById("hips");
+        var still = document.getElementById("still");
+        var don = document.getElementById("don");
+        var red = document.getElementById("red");
+        var riar = document.getElementById("riar");
+        var peg = document.getElementById("peg");
+        var khan = document.getElementById("khan");
+
+
+
 
         const myTimeout = setTimeout(wassup, 1100);
 
-function wassup() {
-    document.getElementById("loading").style.display="none";
-    document.getElementById("box").style.visibility="visible";
-    document.getElementById("mus").style.visibility="visible";
-    document.getElementById("control").style.visibility="visible";
-    
-
-}
+        function wassup() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("box").style.visibility = "visible";
+            document.getElementById("mus").style.visibility = "visible";
+            document.getElementById("control").style.visibility = "visible";
 
 
-
-
-        function playAudio() { 
-            x.play(); 
-            y.className="fa-solid fa-pause";
-            cnt++;
-            if(cnt == 2)
-            {
-              x.pause();
-            
-              y.className="fa-solid fa-play";
-              cnt = 0; 
-            }
-           
         }
-        
+
+
+
+        function tests() {
+            nxt++;
+            songs();
+
+            console.log(nxt);
+
+
+        }
+
+        function prv() {
+            nxt--;
+            songs();
+
+            console.log(nxt);
+
+
+        }
+
+        function songs() {
+
+            switch (nxt) {
+
+
+                case 1:
+
+                    x.setAttribute('src', 'Music/Music1.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/2.jpg')";
+                    n.innerText = "Reminder";
+                    a.innerText = "The Weeknd";
+                    document.title = "Reminder - The Weeknd";
+
+
+                    break;
+
+                case 2:
+
+                    x.setAttribute('src', 'Music/Music2.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/3.jpg')";
+                    n.innerText = "daku";
+                    a.innerText = "chani nattan";
+                    document.title = "Daku - chani Nattan";
+
+
+
+                    break;
+
+                case 3:
+                    x.setAttribute('src', 'Music/Music3.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/4.jpg')";
+                    n.innerText = "yadav brand 2";
+                    a.innerText = "sunny yaduvanshi";
+                    document.title = "Yadav Brand 2 - Sunny Yaduvanshi";
+
+
+
+                    break;
+
+                case 4:
+                    x.setAttribute('src', 'Music/Music4.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/5.jpg')";
+                    n.innerText = "living life,in the night";
+                    a.innerText = "cherlimoya";
+                    document.title = "Living Life,In The Night - Cherlimoya";
+
+
+                    break;
+
+                case 5:
+
+                    x.setAttribute('src', 'Music/Music5.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/6.jpg')";
+                    n.innerText = "hips dont't lie";
+                    a.innerText = "shakira";
+                    document.title = "Hips Don't Lie - Shakira";
+
+                    break;
+
+                case 6:
+                    x.setAttribute('src', 'Music/Music6.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/7.jpg')";
+                    n.innerText = "still rollin";
+                    a.innerText = "shubh";
+                    document.title = "Still Rollin -Shubh";
+
+                    break;
+
+                case 7:
+                    x.setAttribute('src', 'Music/Music7.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/8.jpg')";
+                    n.innerText = "danza kuduro";
+                    a.innerText = "don omar";
+                    document.title = "Danza Kuduron Don - Don Omar";
+
+                    break;
+
+
+                case 8:
+                    x.setAttribute('src', 'Music/Music8.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/9.jpg')";
+                    n.innerText = "gaddi red challenger";
+                    a.innerText = "babbulicious";
+                    document.title = "Gaddi Red Challenger - Babbulicious";
+
+                    break;
+
+                case 9:
+                    x.setAttribute('src', 'Music/Music9.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/10.jpg')";
+                    n.innerText = "obsessed";
+                    a.innerText = "riar saab";
+                    document.title = "Obsessed - riar Saab";
+                    break;
+
+                case 10:
+                    x.setAttribute('src', 'Music/Music10.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/11.jpg')";
+                    n.innerText = "chhote chhote peg";
+                    a.innerText = "yo yo honey singh";
+                    document.title = "Chhote Chhote Peg - Neha Kakkar";
+                    break;
+
+
+                case 11:
+                    x.setAttribute('src', 'Music/Music11.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/12.jpg')";
+                    n.innerText = "haryana hood";
+                    a.innerText = "irshad khan";
+                    document.title = "Haryana Hood - Irshad Khan";
+
+                    break;
+
+                default:
+
+                    x.setAttribute('src', 'Music/Music.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/1.jpg')";
+                    n.innerText = "Rubicon Drill";
+                    a.innerText = "Laddi Chahai";
+                    document.title = "Rubicon Drill - Laddi Chahal";
+
+                    nxt = 0;
+
+
+            }
+        }
+
+
+
+
+
+
+
+        function playAudio() {
+            x.play();
+            y.className = "fa-solid fa-pause";
+            cnt++;
+            if (cnt == 2) {
+                x.pause();
+
+                y.className = "fa-solid fa-play";
+                cnt = 0;
+            }
+
+        }
+
         function sec() {
             x.currentTime -= 30
         }
@@ -159,471 +337,93 @@ function wassup() {
             x.currentTime += 30
         }
 
-        function next(){
-            nxt++;
-            x.setAttribute('src','Music/Music1.mp3');
-           cnt=  1;
-          
-            if(nxt==1){
-                x.setAttribute('src','Music/Music1.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/2.jpg')";
-            n.innerText="Reminder";
-            a.innerText="The Weeknd";
-            document.title="Reminder - The Weeknd";
-            
-         
-            }  
-         
-         else if (nxt==2){
-          
-            nxt++;
-            x.setAttribute('src','Music/Music2.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/3.jpg')";
-            n.innerText="daku";
-            a.innerText="chani nattan";
-            document.title="Daku - chani Nattan";
-            
-            
-         }
-         else if(nxt==4){
-            nxt++;
-            x.setAttribute('src','Music/Music3.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/4.jpg')";
-            n.innerText="yadav brand 2";
-            a.innerText="sunny yaduvanshi";
-            document.title="Yadav Brand 2 - Sunny Yaduvanshi";
+        z.max = x.duration;        // Set max value when you know the duration
+        x.onloadedmetadata = () => z.max = x.duration;
+        // update audio position
+        x.onchange = () => z.currentTime = x.value;
+        // update range input when currentTime updates
+        x.ontimeupdate = () => z.value = x.currentTime;
 
-         }
-         
+        m.onclick = () => rste();
+        hide.onclick = () => rst();
 
-         else if(nxt==6){
-            nxt++;
-            
-            x.setAttribute('src','Music/Music4.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/5.jpg')";
-            n.innerText="living life,in the night";
-            a.innerText="cherlimoya";
-            document.title="Living Life,In The Night - Cherlimoya";
-         }
+        function rst() {
+            p.classList.remove("slide");
+            p.classList.add("down");
 
-
-         else if(nxt==8){
-            nxt++;
-            x.setAttribute('src','Music/Music5.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/6.jpg')";
-            n.innerText="hips dont't lie";
-            a.innerText="shakira";
-            document.title="Hips Don't Lie - Shakira";
-
-
-         }
-         else if(nxt==10){
-            nxt++;
-            x.setAttribute('src','Music/Music6.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/7.jpg')";
-            n.innerText="still rollin";
-            a.innerText="shubh";
-            document.title="Still Rollin -Shubh";
-   
-
-
-         }
-         else if(nxt==12){
-            nxt++;
-            x.setAttribute('src','Music/Music7.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/8.jpg')";
-            n.innerText="danza kuduro";
-            a.innerText="don omar";
-            document.title="Danza Kuduron Don - Don Omar";
-     
-
-
-         }
-         else if(nxt==14){
-            nxt++;
-            x.setAttribute('src','Music/Music8.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/9.jpg')";
-            n.innerText="gaddi red challenger";
-            a.innerText="babbulicious";
-            document.title="Gaddi Red Challenger - Babbulicious";
-     
-
-
-         }
-         else if(nxt==16){
-            nxt++;
-            x.setAttribute('src','Music/Music9.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/10.jpg')";
-            n.innerText="obsessed";
-            a.innerText="riar saab";
-            document.title="Obsessed - riar Saab";
-
-
-
-         }
-         else if(nxt==18){
-            nxt++;
-        
-            x.setAttribute('src','Music/Music10.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/11.jpg')";
-            n.innerText="chhote chhote peg";
-            a.innerText="yo yo honey singh";
-            document.title="Chhote Chhote Peg - Neha Kakkar";
-
-         }
-         else if(nxt==20){
-            nxt++;
-        
-            x.setAttribute('src','Music/Music11.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/12.jpg')";
-            n.innerText="haryana hood";
-            a.innerText="irshad khan";
-            document.title="Haryana Hood - Irshad Khan";
-
-
-         }
-
-
-         else if (nxt==22){
-            x.setAttribute('src','Music/Music.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/1.jpg')";
-            n.innerText="Rubicon Drill";
-            a.innerText="Laddi Chahai";
-            document.title="Rubicon Drill - Laddi Chahal";
-            
-           nxt=0;
-         
         }
-    }
 
-        function prv(){
-            if (prev==0){
-                prev++;
-                x.setAttribute('src','Music/Music11.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/12.jpg')";
-            n.innerText="haryana hood";
-            a.innerText="irshad khan";
-            document.title="Haryana Hood - Irshad Khan";
-            }
+        function rste() {
 
-            else if(prev==1){
-            
-            prev++;
-            x.setAttribute('src','Music/Music10.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/11.jpg')";
-            n.innerText="chhote chhote peg";
-            a.innerText="yo yo honey singh";
-            document.title="Chhote Chhote Peg - Neha Kakkar";
+            p.style.visibility = "visible";
+            p.classList.remove("down");
+            p.classList.add("slide");
+        }
 
-            }
-            else if(prev==2){
-            
-            prev++;
-          
-            x.setAttribute('src','Music/Music9.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/10.jpg')";
-            n.innerText="obsessed";
-            a.innerText="riar saab";
-            document.title="Obsessed - riar Saab";
-            }
+        function laddie() {
 
-            else if(prev==3){
-            
-            prev++;
-            x.setAttribute('src','Music/Music8.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/9.jpg')";
-            n.innerText="gaddi red challenger";
-            a.innerText="babbulicious";
-            document.title="Gaddi Red Challenger - Babbulicious";
-
-            }
-
-            else if(prev==4){
-            
-            prev++;
-         
-            x.setAttribute('src','Music/Music7.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/8.jpg')";
-            n.innerText="danza kuduro";
-            a.innerText="don omar";
-            document.title="Danza Kuduron Don - Don Omar";
-            }
-
-            else if(prev==5){
-            
-            prev++;
-            x.setAttribute('src','Music/Music6.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/7.jpg')";
-            n.innerText="still rollin";
-            a.innerText="shubh";
-            document.title="Still Rollin -Shubh";
-
-            }
-            else if(prev==6){
-            
-            prev++;
-            x.setAttribute('src','Music/Music5.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/6.jpg')";
-            n.innerText="hips dont't lie";
-            a.innerText="shakira";
-            document.title="Hips Don't Lie - Shakira";
-
-
-            }
-
-            else if(prev==7){
-            
-            prev++;
-            x.setAttribute('src','Music/Music4.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/5.jpg')";
-            n.innerText="living life,in the night";
-            a.innerText="cherlimoya";
-            document.title="Living Life,In The Night - Cherlimoya";
-
-            }
-            else if(prev==8){
-            
-            prev++;
-            x.setAttribute('src','Music/Music3.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/4.jpg')";
-            n.innerText="yadav brand 2";
-            a.innerText="sunny yaduvanshi";
-            document.title="Yadav Brand 2 - Sunny Yaduvanshi";
-   
-
-            }
-
-            else if(prev==9){
-            
-            prev++;
-            x.setAttribute('src','Music/Music2.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/3.jpg')";
-            n.innerText="daku";
-            a.innerText="chani nattan";
-            document.title="Daku - chani Nattan";
-
-            }
-
-            else if(prev==10){
-            
-            prev++;
-            x.setAttribute('src','Music/Music1.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/2.jpg')";
-            n.innerText="Reminder";
-            a.innerText="The Weeknd";
-            document.title="Reminder - The Weeknd";
-
-            }
-
-            else if(prev==11)
-            {
-                x.setAttribute('src','Music/Music.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
+            x.setAttribute('src', 'Music/Music.mp3');
+            x.play();
+            y.className = "fa-solid fa-pause";
             m.style.backgroundImage = "url('Cover/1.jpg')";
-            n.innerText="Rubicon Drill";
-            a.innerText="Laddi Chahai";
-            document.title="Rubicon Drill - Laddi Chahal";
-            
-           prev=0;
+            n.innerText = "Rubicon Drill";
+            a.innerText = "Laddi Chahai";
+            document.title = "Rubicon Drill - Laddi Chahal";
+        }
 
-            }
+        function weeke() {
+            nxt=1;
+            songs();
            
-            
         }
 
-z.max  = x.duration;        // Set max value when you know the duration
-x.onloadedmetadata = () => z.max = x.duration;
-// update audio position
-x.onchange = () => z.currentTime = x.value;
-// update range input when currentTime updates
-x.ontimeupdate = () => z.value = x.currentTime;
+        function dakue() {
+            nxt=2;
+            songs();
+           
 
-m.onclick =() => rste();
-hide.onclick =() => rst();
+        }
+        function yadave() {
+            nxt=3;
+            songs();
+          
+          
+        }
+        function lifee() {
+            nxt=4;
+            songs();
+        }
+        function hipse() {  nxt=5;
+            songs();
 
-function rst(){
-    p.classList.remove("slide");
-    p.classList.add("down");
-    
-}
+        }
+        function stille() {
+            nxt=6;
+            songs();
+        }
+        function done() {  nxt=7;
+            songs();
+       
 
-function rste(){
-    
-    p.style.visibility="visible";
-    p.classList.remove("down");
-    p.classList.add("slide");
-}
+        }
+        function rede() {  nxt=8;
+            songs();
 
-function laddie() {
-   
-    x.setAttribute('src','Music/Music.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/1.jpg')";
-            n.innerText="Rubicon Drill";
-            a.innerText="Laddi Chahai";
-            document.title="Rubicon Drill - Laddi Chahal";
-}
+        }
+        function riare() {
+            nxt=9;
+            songs();
+           
+        }
 
-function weeke() {
-    x.setAttribute('src','Music/Music1.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/2.jpg')";
-            n.innerText="Reminder";
-            a.innerText="The Weeknd";
-            document.title="Reminder - The Weeknd";
-   
-}
-
-function dakue() {
-    x.setAttribute('src','Music/Music2.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/3.jpg')";
-            n.innerText="daku";
-            a.innerText="chani nattan";
-            document.title="Daku - chani Nattan";
-
-   
-}
-function yadave() {
-    x.setAttribute('src','Music/Music3.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/4.jpg')";
-            n.innerText="yadav brand 2";
-            a.innerText="sunny yaduvanshi";
-            document.title="Yadav Brand 2 - Sunny Yaduvanshi";
-   
-}
-function lifee() {
-    x.setAttribute('src','Music/Music4.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/5.jpg')";
-            n.innerText="living life,in the night";
-            a.innerText="cherlimoya";
-            document.title="Living Life,In The Night - Cherlimoya";
-}
-function hipse() {
-   
-    x.setAttribute('src','Music/Music5.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/6.jpg')";
-            n.innerText="hips dont't lie";
-            a.innerText="shakira";
-            document.title="Hips Don't Lie - Shakira";
-}
-function stille() {
-    x.setAttribute('src','Music/Music6.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/7.jpg')";
-            n.innerText="still rollin";
-            a.innerText="shubh";
-            document.title="Still Rollin -Shubh";
-   
-}
-function done() {
-    x.setAttribute('src','Music/Music7.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/8.jpg')";
-            n.innerText="danza kuduro";
-            a.innerText="don omar";
-            document.title="Danza Kuduron Don - Don Omar";
-   
-}
-function rede() {
-   
-    x.setAttribute('src','Music/Music8.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/9.jpg')";
-            n.innerText="gaddi red challenger";
-            a.innerText="babbulicious";
-            document.title="Gaddi Red Challenger - Babbulicious";
-}
-function riare() {
-   
-    x.setAttribute('src','Music/Music9.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/10.jpg')";
-            n.innerText="obsessed";
-            a.innerText="riar saab";
-            document.title="Obsessed - riar Saab";
-}
-
-function pege() {
-    x.setAttribute('src','Music/Music10.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/11.jpg')";
-            n.innerText="chhote chhote peg";
-            a.innerText="yo yo honey singh";
-            document.title="Chhote Chhote Peg - Neha Kakkar";
-   
-}
-function khane() {
-   
-    x.setAttribute('src','Music/Music11.mp3');
-           x.play();
-           y.className="fa-solid fa-pause";
-            m.style.backgroundImage = "url('Cover/12.jpg')";
-            n.innerText="haryana hood";
-            a.innerText="irshad khan";
-            document.title="Haryana Hood - Irshad Khan";
-}
+        function pege() {  nxt=10;
+            songs();
+         
+        }
+        function khane() {
+            nxt=11;
+            songs();
+        }
 
 
 
@@ -633,57 +433,58 @@ function khane() {
 
 
 
-function hiddee(){
+        function hiddee() {
 
-    p.style.visibility="none";
-}
+            p.style.visibility = "none";
+        }
 
-z.onchange = () => x.currentTime = z.value;
-x.onended = () => ns.click();
-x.onpause = () =>   y.className="fa-solid fa-play";
-x.onplay= () =>   y.className="fa-solid fa-pause";
-
-
+        z.onchange = () => x.currentTime = z.value;
+        x.onended = () => ns.click();
+        x.onpause = () => y.className = "fa-solid fa-play";
+        x.onplay = () => y.className = "fa-solid fa-pause";
 
 
 
-laddi.onclick = () =>  laddie();
-week.onclick = () => weeke();
-daku.onclick = () => dakkue();
-yadav.onclick = () => yadave();
-life.onclick = () => lifee();
-hips.onclick = () => hipse();
-still.onclick = () => stille();
-don.onclick = () => done();
-red.onclick = () => rede();
-riar.onclick = () => riare();
-peg.onclick = () => pege();
-khan.onclick = () => khane();
+
+
+        laddi.onclick = () => laddie();
+        week.onclick = () => weeke();
+        daku.onclick = () => dakkue();
+        yadav.onclick = () => yadave();
+        life.onclick = () => lifee();
+        hips.onclick = () => hipse();
+        still.onclick = () => stille();
+        don.onclick = () => done();
+        red.onclick = () => rede();
+        riar.onclick = () => riare();
+        peg.onclick = () => pege();
+        khan.onclick = () => khane();
 
 
 
-const shareBtn = document.getElementById('shareBtn')
+        const shareBtn = document.getElementById('shareBtn')
 
-shareBtn.addEventListener('click', event => {
+        shareBtn.addEventListener('click', event => {
 
-  // Check for Web Share api support
-  if (navigator.share) {
-    // Browser supports native share api
-    navigator.share({
-      title: ' ',
-      url: 'https://happy-music.vercel.app'
-    }).then(() => {
-      console.log('Thanks for sharing!');
-    })
-      .catch((err) => console.error(err));
-  } else {
-    // Fallback
-    alert("The current browser does not support the share function. Please, manually share the link")
-  }
-});
+            // Check for Web Share api support
+            if (navigator.share) {
+                // Browser supports native share api
+                navigator.share({
+                    title: ' ',
+                    url: 'https://happy-music.vercel.app'
+                }).then(() => {
+                    console.log('Thanks for sharing!');
+                })
+                    .catch((err) => console.error(err));
+            } else {
+                // Fallback
+                alert("The current browser does not support the share function. Please, manually share the link")
+            }
+        });
 
 
     </script>
 
 </body>
+
 </html>
