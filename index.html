@@ -316,17 +316,34 @@
 
 
 
-        function playAudio() {
-            x.play();
-            y.className = "fa-solid fa-pause";
-            cnt++;
-            if (cnt == 2) {
-                x.pause();
+        function playAudio(){
+    cnt++;
+playaudio();
+console.log(cnt);
+}
 
-                y.className = "fa-solid fa-play";
-                cnt = 0;
+
+
+        function playaudio() { 
+
+
+            switch(cnt){
+
+            case 1:
+          
+            x.play(); 
+            y.className="fa-solid fa-pause";
+            break;
+
+            default:
+                cnt=0;
+            x.pause();
+            
+            y.className="fa-solid fa-play";
+
+
+          
             }
-
         }
 
         function sec() {
