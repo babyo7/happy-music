@@ -47,6 +47,7 @@
                 <button id="riar">Obsessed - Riar Saab</button>
                 <button id="peg">Chhote Chhote Peg - Neha Kakkar</button>
                 <button id="khan">Haryana Hood - Irshad Khan</button>
+                <button id="love">Self Love - Metro Boomin & Coi Leray</button>
                 <button id="space" style="visibility: hidden; height: 17px;">Haryana Hood - Irshad Khan</button>
 
 
@@ -125,7 +126,7 @@
         var peg = document.getElementById("peg");
         var khan = document.getElementById("khan");
 
-
+        var lovee = document.getElementById("love");
 
 
         const myTimeout = setTimeout(wassup, 1100);
@@ -294,6 +295,15 @@
 
                     break;
 
+                    case 12:
+                    x.setAttribute('src', 'Music/Music12.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/13.jpg')";
+                    n.innerText = "Self Love ";
+                    a.innerText = "Metro Boomin & Coi Leray";
+                    document.title = "Self Love - Metro Boomin & Coi Leray";
+                        break;
                 default:
 
                     x.setAttribute('src', 'Music/Music.mp3');
@@ -441,6 +451,10 @@ console.log(cnt);
             nxt=11;
             songs();
         }
+        function loveer() {
+            nxt=12;
+            songs();
+        }
 
 
 
@@ -476,6 +490,7 @@ console.log(cnt);
         riar.onclick = () => riare();
         peg.onclick = () => pege();
         khan.onclick = () => khane();
+        lovee.onclick= () => loveer();
 
 
 
