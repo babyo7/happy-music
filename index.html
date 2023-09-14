@@ -48,6 +48,7 @@
                 <button id="peg">Chhote Chhote Peg - Neha Kakkar</button>
                 <button id="khan">Haryana Hood - Irshad Khan</button>
                 <button id="love">Self Love - Metro Boomin & Coi Leray</button>
+                <button id="check">Check It Out - Parmish Verma & Paradox</button>
                 <button id="space" style="visibility: hidden; height: 17px;">Haryana Hood - Irshad Khan</button>
 
 
@@ -127,6 +128,7 @@
         var khan = document.getElementById("khan");
 
         var lovee = document.getElementById("love");
+        var checkr = document.getElementById("check");
 
 
         const myTimeout = setTimeout(wassup, 1100);
@@ -304,6 +306,15 @@
                     a.innerText = "Metro Boomin & Coi Leray";
                     document.title = "Self Love - Metro Boomin & Coi Leray";
                         break;
+                        case 13:
+                    x.setAttribute('src', 'Music/Music12.mp3');
+                    x.play();
+                    y.className = "fa-solid fa-pause";
+                    m.style.backgroundImage = "url('Cover/13.jpg')";
+                    n.innerText = "Check It Out";
+                    a.innerText = "Parmish Verma & Paradox";
+                    document.title = "Check It Out - Parmish Verma & Paradox";
+                        break;
                 default:
 
                     x.setAttribute('src', 'Music/Music.mp3');
@@ -456,7 +467,10 @@ console.log(cnt);
             songs();
         }
 
-
+  function checkrr() {
+            nxt=13;
+            songs();
+        }
 
 
 
@@ -491,7 +505,7 @@ console.log(cnt);
         peg.onclick = () => pege();
         khan.onclick = () => khane();
         lovee.onclick= () => loveer();
-
+checkr.onclick= () => checkrr();
 
 
         const shareBtn = document.getElementById('shareBtn')
